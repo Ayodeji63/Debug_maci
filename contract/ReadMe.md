@@ -1,1 +1,0 @@
-## VoteLink MACI Contract and Circuit Here
