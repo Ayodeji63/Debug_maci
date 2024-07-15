@@ -1,0 +1,61 @@
+{
+  "address": "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[4]",
+          "name": "input",
+          "type": "uint256[4]"
+        }
+      ],
+      "name": "poseidon",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x0c693583a09d605c22092979737e294a6c69802f30f71ca12089a9cdc786da52",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0x3Aa5ebB10DC797CAC828524e59A333d0A371443c",
+    "transactionIndex": 0,
+    "gasUsed": "98020",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x5c233b52ea9494ed286b5b8037098ec4563c7492ee2d4d7d2ccee3edbe3daeb4",
+    "transactionHash": "0x0c693583a09d605c22092979737e294a6c69802f30f71ca12089a9cdc786da52",
+    "logs": [],
+    "blockNumber": 38,
+    "cumulativeGasUsed": "98020",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "d4edc97ed9e4f18935e5ac94c4119edc",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256[4]\",\"name\":\"input\",\"type\":\"uint256[4]\"}],\"name\":\"poseidon\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"A library which provides functions for computing Pedersen hashes.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"maci-contracts/contracts/crypto/PoseidonT5.sol\":\"PoseidonT5\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"maci-contracts/contracts/crypto/PoseidonT5.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\n/// @notice A library which provides functions for computing Pedersen hashes.\\nlibrary PoseidonT5 {\\n  // solhint-disable-next-line no-empty-blocks\\n  function poseidon(uint256[4] memory input) public pure returns (uint256) {}\\n}\\n\",\"keccak256\":\"0x93228facf0feb920e3b92e536040ba3c6fd5ffcdd5ae415373f153e05cec78b9\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608080604052346100195760ce908161001f823930815050f35b600080fdfe60806004361015600e57600080fd5b600090813560e01c63248f667714602457600080fd5b608036600319011260805736602312156080576080810181811067ffffffffffffffff821117608457604052906084366084116080576020926004905b828210607257505050604051908152f35b813581529084019084016061565b5080fd5b634e487b7160e01b83526041600452602483fdfea2646970667358221220447c29fe87096a442f9a0a2168b556e66fa96de4a76423d23bafd25d5cbb528064736f6c63430008180033",
+  "deployedBytecode": "0x60806004361015600e57600080fd5b600090813560e01c63248f667714602457600080fd5b608036600319011260805736602312156080576080810181811067ffffffffffffffff821117608457604052906084366084116080576020926004905b828210607257505050604051908152f35b813581529084019084016061565b5080fd5b634e487b7160e01b83526041600452602483fdfea2646970667358221220447c29fe87096a442f9a0a2168b556e66fa96de4a76423d23bafd25d5cbb528064736f6c63430008180033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "A library which provides functions for computing Pedersen hashes.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

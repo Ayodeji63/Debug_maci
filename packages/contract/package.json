@@ -40,7 +40,7 @@
   "scripts": {
     "account": "hardhat run scripts/listAccount.ts",
     "chain": "hardhat node --network hardhat --no-deploy",
-    "compile": "hardhat compile",
+    "compile": "hardhat compile --force",
     "deploy": "yarn compile && hardhat deploy",
     "flatten": "yarn compile && hardhat flatten",
     "fork": "MAINNET_FORKING_ENABLED=true hardhat node --network hardhat --no-deploy",
@@ -62,6 +62,8 @@
     "circomkit": "^0.0.24",
     "circomlibjs": "^0.1.7",
     "dotenv": "~16.0.3",
+    "hardhat-artifactor": "^0.2.0",
+    "hardhat-dependency-compiler": "^1.2.1",
     "maci-circuits": "^1.2.5",
     "maci-cli": "^1.2.5",
     "maci-contracts": "^1.2.5",

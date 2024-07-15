@@ -10,7 +10,9 @@
 		"prepare": "husky",
 		"prettier": "yarn workspace @votelink/frontend prettier",
 		"lint": "yarn workspace @votelink/frontend lint",
-		"compile": "yarn workspace @votelink/contract compile"
+		"compile": "yarn workspace @votelink/contract compile",
+		"chain": "yarn workspace @votelink/contract chain",
+		"deploy": "yarn workspace @votelink/contract deploy"
 	},
 	"packageManager": "yarn@4.3.1",
 	"devDependencies": {
