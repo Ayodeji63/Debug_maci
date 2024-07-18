@@ -1,23 +1,24 @@
 {
 	"name": "votelink",
-	"workspaces": [
-		"packages/*"
-	],
+	"version": "0.1.0",
+	"private": "true",
 	"scripts": {
-		"dev": "yarn workspace @votelink/frontend dev",
-		"build": "yarn workspace @votelink/frontend build",
-		"start": "yarn workspace @votelink/frontend start",
-		"prepare": "husky",
-		"prettier": "yarn workspace @votelink/frontend prettier",
-		"lint": "yarn workspace @votelink/frontend lint",
-		"compile": "yarn workspace @votelink/contract compile",
-		"chain": "yarn workspace @votelink/contract chain",
-		"deploy": "yarn workspace @votelink/contract deploy"
+		"dev": "lerna run dev --scope \"@votelink/frontend\"",
+		"build": "lerna run build",
+		"start": "lerna run start --scope \"@votelink/frontend\"",
+		"prepare": "is-ci || husky",
+		"prettier": "lerna run prettier --scope \"@votelink/frontend\"",
+		"lint": "lerna run lint --scope \"@votelink/frontend\"",
+		"compile": "lerna run compile --scope \"@votelink/contract\"",
+		"chain": "lerna run chain --scope \"@votelink/contract\"",
+		"deploy": "lerna run deploy --scope \"@votelink/contract\""
 	},
-	"packageManager": "yarn@4.3.1",
 	"devDependencies": {
 		"@commitlint/cli": "^19.3.0",
 		"@commitlint/config-conventional": "^19.2.2",
-		"hardhat": "^2.22.6"
+		"hardhat": "^2.22.6",
+		"is-ci": "^3.0.1",
+		"husky": "^9.0.11",
+		"lerna": "^8.1.6"
 	}
 }

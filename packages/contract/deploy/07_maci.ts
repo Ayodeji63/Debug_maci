@@ -26,10 +26,6 @@ const deployContracts: DeployFunction = async function (
     GatekeeperContractName,
     deployer
   );
-  const topupCredit = await hre.ethers.getContract(
-    TopupCreditContractName,
-    deployer
-  );
   const pollFactory = await hre.ethers.getContract("PollFactory", deployer);
   const messageProcessorFactory = await hre.ethers.getContract(
     "MessageProcessorFactory",
@@ -45,7 +41,6 @@ const deployContracts: DeployFunction = async function (
       await tallyFactory.getAddress(),
       await gatekeeper.getAddress(),
       await initialVoiceCreditProxy.getAddress(),
-      await topupCredit.getAddress(),
       stateTreeDepth,
     ],
     log: true,

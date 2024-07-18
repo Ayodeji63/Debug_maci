@@ -5,7 +5,6 @@ import fs from "fs";
 import path from "path";
 
 import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
 import "@nomicfoundation/hardhat-ethers";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@typechain/hardhat";
@@ -14,8 +13,9 @@ import "solidity-coverage";
 import "@nomicfoundation/hardhat-verify";
 import "hardhat-deploy";
 import "hardhat-deploy-ethers";
-import "hardhat-dependency-compiler";
+import "hardhat-artifactor";
 import { task, subtask } from "hardhat/config";
+
 /**
  * Allow to copy a direcotry from source to target
  * @param source - the source directory
@@ -47,7 +47,7 @@ function copyDirectory(source:string, target: string): void {
 
 // Define a subtask to copy artifacts
 subtask("copy-maci-artifacts", async (_, { config }) => {
-  const sourceDir = path.resolve(__dirname, "node_modules/maci-contracts/build/artifacts/contracts/");
+  const sourceDir = path.resolve(__dirname, "./node_modules/maci-contracts/build/artifacts/contracts/");
   const destDir = path.resolve(config.paths.artifacts, "maci-contracts", "contracts");
 
   copyDirectory(sourceDir, destDir);
@@ -86,17 +86,6 @@ const config: HardhatUserConfig = {
       },
       viaIR: true,
     },
-  },
-  paths: {
-    sources: "./contracts",
-    tests: "./test",
-    cache: "./cache",
-    artifacts: "./artifacts"
-  },
-  dependencyCompiler: {
-    paths: [
-      '../node_modules/maci-contracts/contracts',
-    ]
   },
   defaultNetwork: "localhost",
   namedAccounts: {
