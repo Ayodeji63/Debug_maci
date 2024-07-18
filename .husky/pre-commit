@@ -1,2 +1,2 @@
-yarn  prettier
-yarn  lint
+pnpm run  prettier
+pnpm run  lint

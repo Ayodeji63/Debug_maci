@@ -1,5 +1,5 @@
 {
-  "address": "0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82",
+  "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
   "abi": [
     {
       "inputs": [
@@ -37,19 +37,19 @@
       "type": "function"
     }
   ],
-  "transactionHash": "0x2184f4d569e82b1b1442623e6103b8a95516f5780976c7b54d0a3611562fc676",
+  "transactionHash": "0xebba58c6cad9b2efd7945ab05d02c4bf48478cee0f6c366a8be39f9136ae5095",
   "receipt": {
     "to": null,
     "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
-    "contractAddress": "0x0DCd1Bf9A1b36cE34237eEaFef220932846BCD82",
+    "contractAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
     "transactionIndex": 0,
-    "gasUsed": "132977",
+    "gasUsed": "156704",
     "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "blockHash": "0x3954e69ffe6bca7fdf1736ed0b72d99e992ace60a7d34340e05f14355bf7d6f8",
-    "transactionHash": "0x2184f4d569e82b1b1442623e6103b8a95516f5780976c7b54d0a3611562fc676",
+    "blockHash": "0xf26b256896a5ba05e0fa397d6651b47bc8231494814ceed00af423dfb008f375",
+    "transactionHash": "0xebba58c6cad9b2efd7945ab05d02c4bf48478cee0f6c366a8be39f9136ae5095",
     "logs": [],
-    "blockNumber": 26,
-    "cumulativeGasUsed": "132977",
+    "blockNumber": 1,
+    "cumulativeGasUsed": "156704",
     "status": 1,
     "byzantium": true
   },
@@ -57,57 +57,6 @@
     99
   ],
   "numDeployments": 1,
-  "solcInputHash": "d4edc97ed9e4f18935e5ac94c4119edc",
-  "metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_balance\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"getVoiceCredits\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_balance\":\"the balance to be returned by getVoiceCredits\"}},\"getVoiceCredits(address,bytes)\":{\"returns\":{\"_0\":\"balance\"}}},\"title\":\"ConstantInitialVoiceCreditProxy\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"creates a new ConstantInitialVoiceCreditProxy\"},\"getVoiceCredits(address,bytes)\":{\"notice\":\"Returns the constant balance for any new MACI's voter\"}},\"notice\":\"This contract allows to set a constant initial voice credit balance for MACI's voters.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"maci-contracts/contracts/initialVoiceCreditProxy/ConstantInitialVoiceCreditProxy.sol\":\"ConstantInitialVoiceCreditProxy\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"maci-contracts/contracts/initialVoiceCreditProxy/ConstantInitialVoiceCreditProxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\nimport { InitialVoiceCreditProxy } from \\\"./InitialVoiceCreditProxy.sol\\\";\\n\\n/// @title ConstantInitialVoiceCreditProxy\\n/// @notice This contract allows to set a constant initial voice credit balance\\n/// for MACI's voters.\\ncontract ConstantInitialVoiceCreditProxy is InitialVoiceCreditProxy {\\n  /// @notice the balance to be returned by getVoiceCredits\\n  uint256 internal balance;\\n\\n  /// @notice creates a new ConstantInitialVoiceCreditProxy\\n  /// @param _balance the balance to be returned by getVoiceCredits\\n  constructor(uint256 _balance) payable {\\n    balance = _balance;\\n  }\\n\\n  /// @notice Returns the constant balance for any new MACI's voter\\n  /// @return balance\\n  function getVoiceCredits(address, bytes memory) public view override returns (uint256) {\\n    return balance;\\n  }\\n}\\n\",\"keccak256\":\"0x1329677e3eb0c7a064026a3b61f140db949623cdeef49f0141f542b11b28aaac\",\"license\":\"MIT\"},\"maci-contracts/contracts/initialVoiceCreditProxy/InitialVoiceCreditProxy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\n/// @title InitialVoiceCreditProxy\\n/// @notice This contract is the base contract for\\n/// InitialVoiceCreditProxy contracts. It allows to set a custom initial voice\\n/// credit balance for MACI's voters.\\nabstract contract InitialVoiceCreditProxy {\\n  /// @notice Returns the initial voice credit balance for a new MACI's voter\\n  /// @param _user the address of the voter\\n  /// @param _data additional data\\n  /// @return the balance\\n  // solhint-disable-next-line no-empty-blocks\\n  function getVoiceCredits(address _user, bytes memory _data) public view virtual returns (uint256) {}\\n}\\n\",\"keccak256\":\"0xa25c307be878c23d3e2f02200eb5cb1ad7c26efc3356cfdc5e72b1e2008f1249\",\"license\":\"MIT\"}},\"version\":1}",
-  "bytecode": "0x6080601f61016b38819003918201601f19168301916001600160401b038311848410176100515780849260209460405283398101031261004c575160005560405161010390816100688239f35b600080fd5b634e487b7160e01b600052604160045260246000fdfe60806004361015600e57600080fd5b6000803560e01c63b36543a914602357600080fd5b3460ca57604036600319011260ca576004356001600160a01b0381160360ca5767ffffffffffffffff9160243583811160b2573660238201121560b25780600401359380851160b657601f8501601f19908116603f011683019081118382101760b657604052838252366024858301011160b25783839260209560248794018483013701015254604051908152f35b8280fd5b634e487b7160e01b84526041600452602484fd5b80fdfea2646970667358221220fbd244b178588ab5fd724bdb55b9e49f5f26e71320a642bca42b5af7c395d6a364736f6c63430008180033",
-  "deployedBytecode": "0x60806004361015600e57600080fd5b6000803560e01c63b36543a914602357600080fd5b3460ca57604036600319011260ca576004356001600160a01b0381160360ca5767ffffffffffffffff9160243583811160b2573660238201121560b25780600401359380851160b657601f8501601f19908116603f011683019081118382101760b657604052838252366024858301011160b25783839260209560248794018483013701015254604051908152f35b8280fd5b634e487b7160e01b84526041600452602484fd5b80fdfea2646970667358221220fbd244b178588ab5fd724bdb55b9e49f5f26e71320a642bca42b5af7c395d6a364736f6c63430008180033",
-  "devdoc": {
-    "kind": "dev",
-    "methods": {
-      "constructor": {
-        "params": {
-          "_balance": "the balance to be returned by getVoiceCredits"
-        }
-      },
-      "getVoiceCredits(address,bytes)": {
-        "returns": {
-          "_0": "balance"
-        }
-      }
-    },
-    "title": "ConstantInitialVoiceCreditProxy",
-    "version": 1
-  },
-  "userdoc": {
-    "kind": "user",
-    "methods": {
-      "constructor": {
-        "notice": "creates a new ConstantInitialVoiceCreditProxy"
-      },
-      "getVoiceCredits(address,bytes)": {
-        "notice": "Returns the constant balance for any new MACI's voter"
-      }
-    },
-    "notice": "This contract allows to set a constant initial voice credit balance for MACI's voters.",
-    "version": 1
-  },
-  "storageLayout": {
-    "storage": [
-      {
-        "astId": 7199,
-        "contract": "maci-contracts/contracts/initialVoiceCreditProxy/ConstantInitialVoiceCreditProxy.sol:ConstantInitialVoiceCreditProxy",
-        "label": "balance",
-        "offset": 0,
-        "slot": "0",
-        "type": "t_uint256"
-      }
-    ],
-    "types": {
-      "t_uint256": {
-        "encoding": "inplace",
-        "label": "uint256",
-        "numberOfBytes": "32"
-      }
-    }
-  }
+  "bytecode": "0x60806040526040516101c63803806101c68339810160408190526100229161002a565b600055610043565b60006020828403121561003c57600080fd5b5051919050565b610174806100526000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063b36543a914610030575b600080fd5b61004661003e36600461006e565b505060005490565b60405190815260200160405180910390f35b634e487b7160e01b600052604160045260246000fd5b6000806040838503121561008157600080fd5b82356001600160a01b038116811461009857600080fd5b9150602083013567ffffffffffffffff808211156100b557600080fd5b818501915085601f8301126100c957600080fd5b8135818111156100db576100db610058565b604051601f8201601f19908116603f0116810190838211818310171561010357610103610058565b8160405282815288602084870101111561011c57600080fd5b826020860160208301376000602084830101528095505050505050925092905056fea2646970667358221220a92d99c9952c5f12388fd909c62d8e60e30a3d7aecf645fd8e85bd992dfc377564736f6c63430008140033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063b36543a914610030575b600080fd5b61004661003e36600461006e565b505060005490565b60405190815260200160405180910390f35b634e487b7160e01b600052604160045260246000fd5b6000806040838503121561008157600080fd5b82356001600160a01b038116811461009857600080fd5b9150602083013567ffffffffffffffff808211156100b557600080fd5b818501915085601f8301126100c957600080fd5b8135818111156100db576100db610058565b604051601f8201601f19908116603f0116810190838211818310171561010357610103610058565b8160405282815288602084870101111561011c57600080fd5b826020860160208301376000602084830101528095505050505050925092905056fea2646970667358221220a92d99c9952c5f12388fd909c62d8e60e30a3d7aecf645fd8e85bd992dfc377564736f6c63430008140033"
 }
